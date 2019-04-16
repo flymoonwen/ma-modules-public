@@ -10,6 +10,9 @@
         <md-icon>storage</md-icon>
         <label ma-tr="dsEdit.vmstat.attribute"></label>
         <md-select name="attribute" ng-model="$ctrl.dataPoint.pointLocator.attribute" required ma-get-ctrl="attributeModelCtrl = $ngModel">
+            <md-option ng-if="$ctrl.dataPoint.pointLocator.attribute.hasMultipleValues()" ng-value="$ctrl.dataPoint.pointLocator.attribute">
+                 <em ng-bind="$ctrl.dataPoint.pointLocator.attribute"></em>
+             </md-option>
             <md-option ng-value="'PROCS_R'" ma-tr="dsEdit.vmstat.attr.procsR"></md-option>
             <md-option ng-value="'PROCS_B'" ma-tr="dsEdit.vmstat.attr.procsB"></md-option>
             <md-option ng-value="'MEMORY_SWPD'" ma-tr="dsEdit.vmstat.attr.memorySwpd"></md-option>
